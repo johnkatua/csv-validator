@@ -1,0 +1,14 @@
+source_file: "data/source.csv"
+target_file: "data/salesforce_export.csv"
+
+primary_key: "VIN__c"
+compare_columns:
+  - VIN__c
+  - Rewards_Level__c
+
+columns_mapping:
+  source_to_target:
+    Vin_number: "VIN__c"
+    Rewards_level: "Rewards_Level__c"
+
+output_report: "reports/latest_report.csv"
