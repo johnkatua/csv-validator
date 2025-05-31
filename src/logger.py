@@ -1,3 +1,7 @@
+"""
+Logging utility
+"""
+
 import logging
 import os
 
