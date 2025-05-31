@@ -1,0 +1,3 @@
+logging:
+  log_file: "logs/app.log"
+  level: "INFO"
