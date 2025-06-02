@@ -1,6 +1,7 @@
 import argparse
 import yaml
 import os
+from src.sf_extractor import connect_to_salesforce
 
 def load_profile(profile_name):
     profile_path = f"profiles/{profile_name}.yaml"
@@ -15,10 +16,13 @@ def load_profile(profile_name):
 def main():
     parser = argparse.ArgumentParser(description="CSV Validator Tool")
     parser.add_argument("--profile", required=True, help="Profile name (without .yaml)")
+    parser.add_argument("--env", choices=["qa", "fullcopy", "docqa"], required=True, help="Salesforce environment")
     args = parser.parse_args()
 
     config = load_profile(args.profile)
-    print(config)
+
+    sf = connect_to_salesforce(args.env)
+    print(config, sf)
     validator = True
 
     if validator:
