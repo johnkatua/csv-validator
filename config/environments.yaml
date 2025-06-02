@@ -1,0 +1,10 @@
+environments:
+  qa:
+    name: "QA Org"
+    dotenv_file: ".env.qa"
+  fullcopy:
+    name: "Full Copy Sandbox"
+    dotenv_file: ".env.fullcopy"
+  docqa:
+    name: "DOC QA Sandbox"
+    dotenv_file: ".env.docqa"
