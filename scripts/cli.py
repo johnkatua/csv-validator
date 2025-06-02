@@ -25,6 +25,12 @@ def main():
     print(config, sf)
     validator = True
 
+    # Example query
+    result = sf.query("SELECT Id, Name FROM Account LIMIT 5")
+
+    for record in result.get("records", []):
+        print(record["Name"])
+
     if validator:
         print("Validation passed.")
     else:
