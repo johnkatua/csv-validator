@@ -22,5 +22,5 @@ pip install -r requirements.txt
 ## Usage
 
 ```bash
-python script/cli.py --profile <profile-name>
+python script/cli.py --profile <profile-name> -- env <env>
 ```
