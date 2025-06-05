@@ -1,4 +1,4 @@
 pandas == 2.2.3
 PyYAML == 6.0.2
-simple-salesforce == 0.3
+simple-salesforce == 1.12.5
 python-dotenv == 1.1.0
