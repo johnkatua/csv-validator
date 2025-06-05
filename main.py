@@ -1,8 +1,8 @@
 import argparse
 import yaml
 import os
-from src.csv_handler.load import read_csvs
-from src.sf_extractor import connect_to_salesforce
+from src.csv_handler.transform import transform_df
+
 
 def load_profile(profile_name):
     profile_path = f"profiles/{profile_name}.yaml"
@@ -24,7 +24,7 @@ def main():
 
     # sf = connect_to_salesforce(args.env)
     print(config)
-    read_csvs(config)
+    transform_df(config)
     validator = True
 
     # Example query

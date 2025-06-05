@@ -9,6 +9,6 @@ compare_columns:
 columns_mapping:
   source_to_target:
     Vin_number: "VIN__c"
-    Rewards_level: "Rewards_Level__c"
+    Rewards_Level: "Rewards_Level__c"
 
 output_report: "reports/latest_report.csv"
