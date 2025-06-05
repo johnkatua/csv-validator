@@ -1,7 +1,7 @@
 import argparse
 import yaml
 import os
-from src.csv_handler import load
+from src.csv_handler.load import read_csvs
 from src.sf_extractor import connect_to_salesforce
 
 def load_profile(profile_name):
@@ -24,6 +24,7 @@ def main():
 
     # sf = connect_to_salesforce(args.env)
     print(config)
+    read_csvs(config)
     validator = True
 
     # Example query

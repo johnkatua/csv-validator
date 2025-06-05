@@ -1,12 +1,21 @@
 import logging
 import pandas as pd
+from .rename import rename_columns
 
 logger = logging.getLogger()
 
-def read_csvs(source_path, target_path, config):
+def read_csvs(config):
     try:
+        source_path = config['source_file']
+        target_path = config['target_file']
+        key_field = config['primary_key']
         df_source = pd.read_csv(source_path)
         df_target = pd.read_csv(target_path)
+        rename_columns(df_source, config)
+
+        # Set index
+        df_source = df_source.set_index(key_field)
+        df_target = df_target.set_index(key_field)
         print(df_source, df_target)
         
     except Exception as e:
